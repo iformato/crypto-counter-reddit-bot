@@ -36,15 +36,15 @@ for comment in subreddit.stream.comments():
         dogeCounts = 0
         dt = date.today()
     lowerComment = comment.body.lower()
-    if phrase or phrase1 or phrase2 or phrase3 in lowerComment:
-        if phrase in lowerComment:
-            btcCounts += 1
-        if phrase1 in lowerComment:
-            ethCounts += 1
-        if phrase2 in lowerComment:
-            dogeCounts += 1
-        if phrase3 in lowerComment:
-            comment.reply(f'hello there! bitcoinbot here!\n\nbtc has been mentioned {btcCounts} times today\n\n'
-                  f'eth has been mentioned {ethCounts} times today\n\n'
-                  f'dogecoin has been mentioned {dogeCounts} times today\n\n'
-                  f'i hope this helps! summon me at any time by invoking my name! have a great day!')
+
+    if phrase in lowerComment:
+        btcCounts += 1
+    if phrase1 in lowerComment:
+        ethCounts += 1
+    if phrase2 in lowerComment:
+        dogeCounts += 1
+    if phrase3 in lowerComment:
+        comment.reply(f'hello there! bitcoinbot here!\n\nbtc has been mentioned {btcCounts} times today\n\n'
+              f'eth has been mentioned {ethCounts} times today\n\n'
+              f'dogecoin has been mentioned {dogeCounts} times today\n\n'
+              f'i hope this helps! summon me at any time by invoking my name! have a great day!')
