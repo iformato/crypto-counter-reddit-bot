@@ -4,5 +4,6 @@ The crypto counter reddit bot is a reddit bot that serves to count that amount o
 
 **Technologies**
 The bot was programmed in python 3.10 utilizing the praw package. 
+
 **To Use**
 All you need outside of python is to install praw.
