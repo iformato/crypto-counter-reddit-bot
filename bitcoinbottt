@@ -27,7 +27,7 @@ dogeCounts = 0
 phrase = 'bitcoin'
 phrase1 = 'ethereum'
 phrase2 = 'dogecoin'
-phrase3 = 'bitcoinbottt'
+phrase3 = 'bot name'
 subreddit = reddit.subreddit('all')
 for comment in subreddit.stream.comments():
     if dt != date.today():
