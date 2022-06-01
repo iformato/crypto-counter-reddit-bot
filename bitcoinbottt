@@ -35,11 +35,11 @@ phrase3 = 'crypto!stats'
 subreddit = reddit.subreddit('all')
 for comment in subreddit.stream.comments():
     if dt != date.today():
-        dbtc[dt] = btcCounts
-        deth[dt] = ethCounts
-        ddoge[dt] = dogeCounts
-        with open('crypto_data', 'w') as convert_file:
-            convert_file.write('BITCOIN: ')
+        dbtc[str(dt)] = btcCounts
+        deth[str(dt)] = ethCounts
+        ddoge[str(dt)] = dogeCounts
+        with open('crypto_data', 'a') as convert_file:
+            convert_file.write('\n\nBITCOIN: ')
             convert_file.write(json.dumps(dbtc))
             convert_file.write('\n\nETHEREUM: ')
             convert_file.write(json.dumps(deth))
@@ -53,8 +53,8 @@ for comment in subreddit.stream.comments():
 
     if phrase in lowerComment:
         btcCounts += 1
-        print(f'btcCounts = {btcCounts}') # debug
-        print(lowerComment) # debug
+        # print(f'btcCounts = {btcCounts}') # debug
+        # print(lowerComment) # debug
     if phrase1 in lowerComment:
         ethCounts += 1
         # print(f'etcCounts = {ethCounts}') # debug
