@@ -1,0 +1,27 @@
+import tweepy
+import time
+from datetime import datetime
+from datetime import date
+from datetime import timedelta
+
+CONSUMER_KEY = '#consumer key here'
+CONSUMER_SECRET = '#consumer secret here'
+ACCESS_KEY = '#access here'
+ACCESS_SECRET = '#secret access here'
+auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
+auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
+
+
+twitter_API = tweepy.API(auth)
+
+bot = True
+while bot == True:
+    now = datetime.now()
+    today = date.today()
+    yesterday = today - timedelta(days=1)
+    with open('crypto_data', 'r') as f:
+        lines = f.read()
+    tweet = f'yesterday, {yesterday}, the following cryptocurrencies were mentioned in reddit comments approximately this many times:\n\n' \
+    f'{lines}'
+    twitter_API.update_status(tweet)
+    time.sleep(86400)
