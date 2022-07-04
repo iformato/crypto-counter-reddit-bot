@@ -8,7 +8,7 @@ Upon the reddit bot's data being inputted into the file, the twitter bot will th
 
 **Technologies**
 
-The bot was programmed in python 3.10. The reddit bot was built utilizing the praw package, while the twitter bot used the tweepy librar. 
+The bot was programmed in python 3.10. The reddit bot was built utilizing the praw package, while the twitter bot used the tweepy library. 
 
 
 **To Use**
